@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace -->
+<mapper namespace="com.bithumb">
+	 <insert id="multiInsert" parameterType="arraylist">
+        insert all
+        <foreach item="item" index="index" collection="list">
+			into bithumb (bithumb_pk, currency, opening_price,
+						  closing_price, min_price, max_price, average_price,
+						  units_traded, volume_1day, volume_7day, buy_price, 
+						  sell_price, fluctate_24H, fluctate_rate_24H) 
+			values (#{item.bithumb_pk}, #{item.currency}, #{item.opening_price},
+					#{item.closing_price}, #{item.min_price}, #{item.max_price}, #{item.average_price},
+					#{item.units_traded}, #{item.volume_1day}, #{item.volume_7day}, #{item.buy_price}, 
+					#{item.sell_price}, #{item.fluctate_24H}, #{item.fluctate_rate_24H})
+		</foreach>
+		select *
+		from dual
+     </insert>
+</mapper>
