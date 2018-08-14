@@ -19,7 +19,7 @@ public class BithumbMain2 {
 		HttpURLConnection huc = null;
 		StringBuilder sb = null;
 		try {
-			huc = (HttpURLConnection) new URL("https://api.upbit.com/v1/market/all").openConnection();
+			huc = (HttpURLConnection) new URL("https://api.upbit.com/v1/ticker?markets=KRW-BTC").openConnection();
 			huc.setRequestMethod("GET");
 			huc.addRequestProperty("User-Agent",
 					"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0");
