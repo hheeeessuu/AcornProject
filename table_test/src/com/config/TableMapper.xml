@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dto">
+
+    
+    <select id="selectAll" resultType="TableDTO"
+	        parameterType="hashmap">
+		select bithumb_pk, to_char(bithumb_date, 'YYYY/mm/DD') bithumb_date, currency, opening_price, closing_price, min_price, max_price, average_price, units_traded, volume_1day, volume_7day, buy_price, sell_price, fluctate_24h, fluctate_rate_24h
+         from bithumb
+        
+		<where>
+		   <if test="searchName=='currency'">
+		       currency LIKE upper('%'||#{searchValue}||'%')
+		   </if>
+		</where>
+	</select>
+	
+</mapper>
