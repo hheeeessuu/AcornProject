@@ -9,23 +9,23 @@ public class TableDTO {
 	 private int closing_price;
 	 private int min_price;
 	 private int max_price;
-	 private int average_price;
-	 private int units_traded;
-	 private int volume_1day;
-	 private int volume_7day;
+	 private double average_price;
+	 private double units_traded;
+	 private double volume_1day;
+	 private double volume_7day;
 	 private int buy_price;
 	 private int sell_price;
 	 private int fluctate_24h;
-	 private int fluctate_rate_24h;
+	 private double fluctate_rate_24h;
 	
 	public TableDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public TableDTO(String bithumb_pk, String bithumb_date, String currency, int opening_price, int closing_price,
-			int min_price, int max_price, int average_price, int nuits_traded, int volume_1day, int volume_7day,
-			int buy_price, int sell_price, int fluctate_24h, int fluctate_rate_24h) {
+			int min_price, int max_price, double average_price, double units_traded, double volume_1day,
+			double volume_7day, int buy_price, int sell_price, int fluctate_24h, double fluctate_rate_24h) {
 		super();
 		this.bithumb_pk = bithumb_pk;
 		this.bithumb_date = bithumb_date;
@@ -35,7 +35,7 @@ public class TableDTO {
 		this.min_price = min_price;
 		this.max_price = max_price;
 		this.average_price = average_price;
-		this.units_traded = nuits_traded;
+		this.units_traded = units_traded;
 		this.volume_1day = volume_1day;
 		this.volume_7day = volume_7day;
 		this.buy_price = buy_price;
@@ -100,35 +100,35 @@ public class TableDTO {
 		this.max_price = max_price;
 	}
 
-	public int getAverage_price() {
+	public double getAverage_price() {
 		return average_price;
 	}
 
-	public void setAverage_price(int average_price) {
+	public void setAverage_price(double average_price) {
 		this.average_price = average_price;
 	}
 
-	public int getUnits_traded() {
+	public double getUnits_traded() {
 		return units_traded;
 	}
 
-	public void setUnits_traded(int units_traded) {
+	public void setUnits_traded(double units_traded) {
 		this.units_traded = units_traded;
 	}
 
-	public int getVolume_1day() {
+	public double getVolume_1day() {
 		return volume_1day;
 	}
 
-	public void setVolume_1day(int volume_1day) {
+	public void setVolume_1day(double volume_1day) {
 		this.volume_1day = volume_1day;
 	}
 
-	public int getVolume_7day() {
+	public double getVolume_7day() {
 		return volume_7day;
 	}
 
-	public void setVolume_7day(int volume_7day) {
+	public void setVolume_7day(double volume_7day) {
 		this.volume_7day = volume_7day;
 	}
 
@@ -156,11 +156,11 @@ public class TableDTO {
 		this.fluctate_24h = fluctate_24h;
 	}
 
-	public int getFluctate_rate_24h() {
+	public double getFluctate_rate_24h() {
 		return fluctate_rate_24h;
 	}
 
-	public void setFluctate_rate_24h(int fluctate_rate_24h) {
+	public void setFluctate_rate_24h(double fluctate_rate_24h) {
 		this.fluctate_rate_24h = fluctate_rate_24h;
 	}
 
@@ -173,6 +173,6 @@ public class TableDTO {
 				+ ", sell_price=" + sell_price + ", fluctate_24h=" + fluctate_24h + ", fluctate_rate_24h="
 				+ fluctate_rate_24h + "]";
 	}
-
+	
 
 }
